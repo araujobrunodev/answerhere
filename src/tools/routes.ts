@@ -7,7 +7,8 @@ type Routes = "EXIT" |
     "ADM_CREATE" |
     "ADM_READ" |
     "ADM_UPDATE" |
-    "ADM_DELETE";
+    "ADM_DELETE" |
+    "CURRENT_PATH"
 
 import main from "../sections/main"
 import exit from "../sections/exit"

@@ -1,5 +1,6 @@
 import input from "../tools/input"
 import filterCommand from "../tools/filterCommand"
+import route from "../tools/routes"
 
 /**
  * @function main
@@ -16,7 +17,9 @@ async function main () {
     console.log("[EXIT]")
     console.log("==========================")
 
-    await input("where you wanna go?")
+    const answer = await input("where you wanna go?")
+
+    if (route("CURRENT_PATH") == "MAIN") route("MAIN")
 }
 
 export default main
