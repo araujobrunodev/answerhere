@@ -9,6 +9,8 @@ type Routes = "EXIT" |
     "ADM_UPDATE" |
     "ADM_DELETE";
 
+import main from "../sections/main"
+
 let current_path = ""
 
 function route (path:Routes) {
@@ -17,6 +19,7 @@ function route (path:Routes) {
     switch (path) {
         case "MAIN":
             current_path = "MAIN"
+            main()
             break;
         
         case "PLAY":
