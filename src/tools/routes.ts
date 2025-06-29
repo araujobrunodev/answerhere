@@ -10,6 +10,7 @@ type Routes = "EXIT" |
     "ADM_DELETE";
 
 import main from "../sections/main"
+import exit from "../sections/exit"
 
 export {Routes}
 
@@ -54,6 +55,7 @@ function route (path:Routes) {
 
         case "EXIT":
             current_path = "EXIT"
+            exit()
             break;
 
         case "RANDOM_QUIZ":
