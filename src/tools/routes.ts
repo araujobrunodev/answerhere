@@ -11,6 +11,8 @@ type Routes = "EXIT" |
 
 import main from "../sections/main"
 
+export {Routes}
+
 let current_path = ""
 
 function route (path:Routes) {

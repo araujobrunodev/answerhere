@@ -1,3 +1,4 @@
+import filterCommand from "./filterCommand"
 import {current_interface} from "./rl"
 
 /**
@@ -8,7 +9,7 @@ import {current_interface} from "./rl"
 */
 async function input (msg:string):Promise<string> {
     return new Promise((resolve) => 
-        current_interface.question(msg, (answer) => resolve(answer))
+        current_interface.question(msg, (answer) => resolve(filterCommand(answer)))
     )
 }
 

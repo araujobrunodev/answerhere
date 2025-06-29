@@ -1,5 +1,5 @@
 import input from "../tools/input"
-import route from "../tools/routes"
+import filterCommand from "../tools/filterCommand"
 
 /**
  * @function main
@@ -15,6 +15,8 @@ async function main () {
     console.log("[ADM]")
     console.log("[EXIT]")
     console.log("==========================")
+
+    await input("where you wanna go?")
 }
 
 export default main
