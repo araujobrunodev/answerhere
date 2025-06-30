@@ -12,14 +12,13 @@ type Routes = "EXIT" |
 
 import main from "../sections/main"
 import exit from "../sections/exit"
+import adm from "../sections/adm"
 
 export {Routes}
 
 let current_path = ""
 
 function route (path:Routes) {
-    console.log("\n================================\n")
-    
     switch (path) {
         case "MAIN":
             current_path = "MAIN"
@@ -32,6 +31,7 @@ function route (path:Routes) {
 
         case "ADM":
             current_path = "ADM"
+            adm()
             break;
 
         case "ADM_CREATE":

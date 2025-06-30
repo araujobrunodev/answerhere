@@ -10,13 +10,13 @@ function filterCommand (data: string):string {
 
     if (start_command === -1) return data;
 
-    const command_list = ["MAIN","PLAY","ADM","EXIT"]
+    const command_list = ["MAIN", "PLAY", "EXIT", "ADM_CREATE", "ADM_READ", "ADM_UPDATE", "ADM_DELETE", "ADM"]
 
-    const command = command_list.find(command => {
+    const commandFound = command_list.find(command => {
         return data.toLocaleUpperCase().search(command) > -1
     })
 
-    if (command != undefined) route(command as Routes)
+    if (commandFound != undefined) route(commandFound as Routes)
         
     return data
 }
