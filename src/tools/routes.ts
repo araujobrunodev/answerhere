@@ -13,6 +13,7 @@ type Routes = "EXIT" |
 import main from "../sections/main"
 import exit from "../sections/exit"
 import adm from "../sections/adm"
+import admCreate from "../sections/admCreate"
 
 export {Routes}
 
@@ -36,6 +37,7 @@ function route (path:Routes) {
 
         case "ADM_CREATE":
             current_path = "ADM_CREATE"
+            admCreate()
             break;
 
         case "ADM_DELETE":
