@@ -1,6 +1,6 @@
 import route from "../tools/routes"
 import question from "../tools/questions"
-import title from "../tools/title"
+import text from "../tools/text"
 
 /**
  * @function admCreate
@@ -13,7 +13,7 @@ async function admCreate () {
     console.log("==========================")
     console.log("INFORMATIONS\n")
 
-    await title("Quiz")
+    await text("Quiz's title")
 
     await question()
 }
