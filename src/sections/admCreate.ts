@@ -1,4 +1,4 @@
-import route from "../tools/routes"
+import quizList from "../storage/cache"
 import { question } from "../tools/questions"
 import text from "../tools/text"
 
@@ -14,8 +14,18 @@ async function admCreate () {
     console.log("INFORMATIONS\n")
 
     const title = await text("Quiz's title")
-
+    const creationDate = new Date() 
+    const edited = "none"
     const questions = await question()
+    const ID = `${title.length}${Date.now()}${questions.length}`
+
+    quizList.push({
+        title: title,
+        creationDate: creationDate,
+        edited: edited,
+        ID: ID,
+        questions: questions
+    })
 }
 
 export default admCreate
