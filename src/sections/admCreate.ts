@@ -1,5 +1,5 @@
 import route from "../tools/routes"
-import input from "../tools/input"
+import question from "../tools/questions"
 
 /**
  * @function admCreate
@@ -12,7 +12,7 @@ async function admCreate () {
     console.log("==========================")
     console.log("QUIZ'S INFORMATION")
 
-    
+    await question()
 }
 
 export default admCreate
