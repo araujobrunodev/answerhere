@@ -1,16 +1,16 @@
-import { questionType } from "../structureType/questionsType";
+import { sideType } from "../structureType/questionsType";
 import input from "./input"
 import text from "./text";
 import { options, optionList } from "./options"
 
-const sideList:questionType[] = []
+const sideList:sideType[] = []
 
 /**
  * @function Questions
  * will ask about data about quiz and repeat untill 
  * there nothing more to put it
  */
-async function question ():Promise<questionType[]> {
+async function question ():Promise<sideType[]> {
     const title = await text("Side's title")
     const opts = await options()
     const repeat_loop = await input("Do you want to continue it? (y/n) ")

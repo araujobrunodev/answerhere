@@ -4,10 +4,10 @@ interface OptionsType {
     bio: string
 }
 
-interface QuestionType {
+interface SideType {
     title: string,
     options: OptionsType[]
 }
 
 export type optionsType = OptionsType
-export type questionType = QuestionType
+export type sideType = SideType
