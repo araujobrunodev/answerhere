@@ -1,5 +1,5 @@
 import route from "../tools/routes"
-import question from "../tools/questions"
+import { question } from "../tools/questions"
 import text from "../tools/text"
 
 /**
@@ -13,9 +13,9 @@ async function admCreate () {
     console.log("==========================")
     console.log("INFORMATIONS\n")
 
-    await text("Quiz's title")
+    const title = await text("Quiz's title")
 
-    await question()
+    const questions = await question()
 }
 
 export default admCreate
