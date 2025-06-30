@@ -1,5 +1,6 @@
 import { questionType } from "../structureType/questionsType";
-import input from "../tools/input"
+import input from "./input"
+import title from "./title";
 
 const questionList:questionType[] = []
 
@@ -9,7 +10,7 @@ const questionList:questionType[] = []
  * there nothing more to put it
  */
 async function question ():Promise<questionType[]> {
-
+    const Title = await title("side")
 
     const repeat_loop = await input("Do you want to continue it? (y/n) ")
 

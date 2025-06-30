@@ -1,5 +1,6 @@
 import route from "../tools/routes"
 import question from "../tools/questions"
+import title from "../tools/title"
 
 /**
  * @function admCreate
@@ -10,7 +11,9 @@ async function admCreate () {
     console.log("==========================")
     console.log("Here is ask info about your quiz.")
     console.log("==========================")
-    console.log("QUIZ'S INFORMATION")
+    console.log("INFORMATIONS\n")
+
+    await title("Quiz")
 
     await question()
 }
