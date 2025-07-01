@@ -8,7 +8,9 @@ type Routes = "EXIT" |
     "ADM_READ" |
     "ADM_UPDATE" |
     "ADM_DELETE" |
-    "CURRENT_PATH"
+    "CURRENT_PATH" |
+    "!TITLE" |
+    "!SIDES"
 
 import main from "../sections/main"
 import exit from "../sections/exit"
@@ -67,6 +69,14 @@ function route (path:Routes) {
 
         case "RANDOM_QUIZ":
             current_path = "RANDOM QUIZ"
+            break;
+
+        case "!SIDES":
+            current_path = "ADM_UPDATE!SIDES"
+            break;
+
+        case "!TITLE":
+            current_path = "ADM_UPDATE!TITLE"
             break;
     }
 
