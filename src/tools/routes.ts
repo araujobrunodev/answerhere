@@ -17,7 +17,7 @@ import exit from "../sections/exit"
 import adm from "../sections/adm"
 import admCreate from "../sections/admCreate"
 import admRead from "../sections/admRead"
-import admUpdate from "../sections/admUpdate"
+import { admUpdate } from "../sections/admUpdate"
 
 export {Routes}
 
