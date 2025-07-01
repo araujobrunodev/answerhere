@@ -21,7 +21,7 @@ async function admUpdate () {
     if (findID) quizsIDToChange = askID;
     else {
         console.log("Quiz's ID not found")
-        route("ADM_UPDATE")
+        return route("ADM_UPDATE")
     }
 
     console.log("==========================")
