@@ -1,3 +1,5 @@
+import findQuizsID from "../tools/findQuizsID"
+
 /**
  * @function admRead
  * will show a menu how to found and read quiz
