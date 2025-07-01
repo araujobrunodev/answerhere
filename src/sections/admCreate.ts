@@ -1,6 +1,9 @@
 import quizList from "../storage/cache"
 import { question } from "../tools/questions"
 import text from "../tools/text"
+import route from "../tools/routes"
+import timer from "../tools/timer"
+import { quizType } from "../structureType/questionsType"
 
 /**
  * @function admCreate
@@ -26,6 +29,15 @@ async function admCreate () {
         ID: ID,
         questions: questions
     })
+
+    console.log("Quiz saved\n")
+
+    const quiz = quizList.find(quiz => quiz.ID == ID) as quizType
+
+    console.table(quiz)
+
+    await timer(3)
+    route("ADM")
 }
 
 export default admCreate
