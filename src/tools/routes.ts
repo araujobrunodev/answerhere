@@ -19,6 +19,7 @@ import admCreate from "../sections/admCreate"
 import admRead from "../sections/admRead"
 import { admUpdate } from "../sections/admUpdate"
 import updateTitle from "../sections/updateTitle"
+import updateSide from "../sections/updateSide"
 
 export {Routes}
 
@@ -74,6 +75,7 @@ function route (path:Routes) {
 
         case "!SIDES":
             current_path = "ADM_UPDATE!SIDES"
+            updateSide()
             break;
 
         case "!TITLE":
