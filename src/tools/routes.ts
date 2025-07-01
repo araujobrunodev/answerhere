@@ -15,6 +15,7 @@ import exit from "../sections/exit"
 import adm from "../sections/adm"
 import admCreate from "../sections/admCreate"
 import admRead from "../sections/admRead"
+import admUpdate from "../sections/admUpdate"
 
 export {Routes}
 
@@ -52,6 +53,7 @@ function route (path:Routes) {
 
         case "ADM_UPDATE":
             current_path = "ADM_UPDATE"
+            admUpdate()
             break;
 
         case "CHOOSE_THE_QUIZ":
