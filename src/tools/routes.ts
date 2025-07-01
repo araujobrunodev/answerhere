@@ -14,6 +14,7 @@ import main from "../sections/main"
 import exit from "../sections/exit"
 import adm from "../sections/adm"
 import admCreate from "../sections/admCreate"
+import admRead from "../sections/admRead"
 
 export {Routes}
 
@@ -46,6 +47,7 @@ function route (path:Routes) {
 
         case "ADM_READ":
             current_path = "ADM_READ"
+            admRead()
             break;
 
         case "ADM_UPDATE":
