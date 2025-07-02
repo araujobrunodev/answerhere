@@ -31,4 +31,4 @@ async function options ():Promise<optionsType[]> {
     };
 }
 
-export {options, optionList}
+export default options

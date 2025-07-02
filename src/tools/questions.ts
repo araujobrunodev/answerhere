@@ -1,7 +1,7 @@
 import { sideType } from "../structureType/questionsType";
 import input from "./input"
 import text from "./text";
-import { options } from "./options"
+import options from "./options"
 
 const sideList:sideType[] = []
 
