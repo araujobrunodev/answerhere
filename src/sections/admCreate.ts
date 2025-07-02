@@ -1,5 +1,5 @@
 import { quizList } from "../storage/cache"
-import { question } from "../tools/questions"
+import question from "../tools/questions"
 import text from "../tools/text"
 import route from "../tools/routes"
 import timer from "../tools/timer"

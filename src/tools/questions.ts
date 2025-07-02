@@ -6,7 +6,7 @@ import { options } from "./options"
 const sideList:sideType[] = []
 
 /**
- * @function Questions
+ * @function questions
  * will ask about data about quiz and repeat untill 
  * there nothing more to put it
  */
@@ -22,7 +22,12 @@ async function question ():Promise<sideType[]> {
     })
 
     if (types_of_yes.findIndex((value) => value === repeat_loop.toLocaleLowerCase()) !== -1) return question();
-    else return sideList;
+    else {
+        const newSides = Array.from(sideList)
+        sideList.length = 0
+
+        return newSides
+    };
 }
 
-export { question, sideList}
+export default question
