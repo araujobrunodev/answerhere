@@ -4,6 +4,7 @@ import text from "../tools/text"
 import timer from "../tools/timer"
 import { quizsIDToChange } from "./admUpdate"
 import quizList from "../storage/cache"
+import editSide from "../tools/editSide"
 
 /**
  * @function updateSide
@@ -26,9 +27,9 @@ async function updateSide () {
         console.log(`[${index}] - side's title: ${side.title}`)
     })
 
-    const askSideIndex = await text("side index")
+    const askSideIndex = parseInt(await text("side index"))
 
-    //edit side by quiz's index and side's index
+    if (!isNaN(askSideIndex) && askSideIndex < side_length ) editSide(index_quiz, askSideIndex)
 
     await timer(6)
     return route("ADM_UPDATE")
