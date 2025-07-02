@@ -10,18 +10,21 @@ async function editSide (quiz: quizType, sideIndex: number) {
     const side = quiz.questions[sideIndex]
     const opts_length = side.options.length
 
-    console.log("current side's title:",side.title)
+    console.log(`\nCurrent side's title: ${side.title}`)
 
     const askTitle = await text("replace title")
 
     side.title = askTitle
 
     console.log("\nChange options property")
-    console.log("Choose which option to edit it\n")
+    console.log("Choose which option to edit it")
 
-    side.options.forEach((opt, index) => {
+    await timer(2)
+
+    side.options.forEach(async (opt, index) => {
         console.log(`\n[${index}] - option ${opt.text}`)
         console.table(opt)
+        await timer(1)
     })
 
     await timer(4)
