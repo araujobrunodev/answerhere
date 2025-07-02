@@ -20,6 +20,7 @@ import admRead from "../sections/admRead"
 import { admUpdate } from "../sections/admUpdate"
 import updateTitle from "../sections/updateTitle"
 import updateSide from "../sections/updateSide"
+import admDelete from "../sections/admDelete"
 
 export {Routes}
 
@@ -48,6 +49,7 @@ function route (path:Routes) {
 
         case "ADM_DELETE":
             current_path = "ADM_DELETE"
+            admDelete()
             break;
 
         case "ADM_READ":
