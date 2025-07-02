@@ -1,31 +1,41 @@
-import quizList from "../storage/cache"
 import text from "./text"
 import timer from "./timer"
-import route from "./routes"
 import editOpt from "./editOpt"
+import { quizType } from "../structureType/questionsType"
 
 /**
  * @function editSide
  */
-async function editSide (index_quiz: number, sideIndex: number) {
-    const side = quizList[index_quiz].questions[sideIndex]
+async function editSide (quiz: quizType, sideIndex: number) {
+    const side = quiz.questions[sideIndex]
     const opts_length = side.options.length
 
     console.log("current side's title:",side.title)
 
     const askTitle = await text("replace title")
 
+    side.title = askTitle
+
+    console.log("\nChange options property")
+    console.log("Choose which option to edit it\n")
+
     side.options.forEach((opt, index) => {
-        console.log(`[${index}] - option: ${console.table(opt)}]`)
+        console.log(`\n[${index}] - option ${opt.text}`)
+        console.table(opt)
     })
 
     await timer(4)
+    console.log("\nOption index is the number at the beginning")
 
     const askOptIndex = parseInt(await text("option index"))
 
-    if (!isNaN(askOptIndex) && askOptIndex < opts_length) editOpt(side.options, askOptIndex)
+    if (!isNaN(askOptIndex) && askOptIndex < opts_length) {
+        const newOpt = await editOpt(side.options, askOptIndex)
 
-    return route("ADM_UPDATE")
+        side.options[askOptIndex] = newOpt
+    }
+
+    return side
 }
 
 export default editSide

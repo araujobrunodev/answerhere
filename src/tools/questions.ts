@@ -1,7 +1,7 @@
 import { sideType } from "../structureType/questionsType";
 import input from "./input"
 import text from "./text";
-import { options, optionList } from "./options"
+import { options } from "./options"
 
 const sideList:sideType[] = []
 
@@ -20,8 +20,6 @@ async function question ():Promise<sideType[]> {
         title: title,
         options: opts
     })
-
-    optionList.length = 0
 
     if (types_of_yes.findIndex((value) => value === repeat_loop.toLocaleLowerCase()) !== -1) return question();
     else return sideList;

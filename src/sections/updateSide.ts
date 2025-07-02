@@ -29,7 +29,14 @@ async function updateSide () {
 
     const askSideIndex = parseInt(await text("side index"))
 
-    if (!isNaN(askSideIndex) && askSideIndex < side_length ) editSide(index_quiz, askSideIndex)
+    if (!isNaN(askSideIndex) && askSideIndex < side_length ) {
+        const newSide = await editSide(quiz, askSideIndex)
+
+        quiz.questions[askSideIndex] = newSide
+        quiz.edited = (new Date()).toString()
+
+        quizList[index_quiz] = quiz
+    }
 
     await timer(6)
     return route("ADM_UPDATE")

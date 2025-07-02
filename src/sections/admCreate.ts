@@ -32,11 +32,13 @@ async function admCreate () {
 
     console.log("Quiz saved\n")
 
+    await timer(2)
+
     const quiz = quizList.find(quiz => quiz.ID == ID) as quizType
 
     console.table(quiz)
 
-    await timer(3)
+    await timer(4)
     route("ADM")
 }
 

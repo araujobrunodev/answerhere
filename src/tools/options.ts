@@ -23,7 +23,12 @@ async function options ():Promise<optionsType[]> {
     })
 
     if (types_of_yes.findIndex((value) => value === repeat_loop.toLocaleLowerCase()) !== -1) return options();
-    else return optionList;
+    else {
+        const newOptionList = Array.from(optionList)
+        optionList.length = 0
+
+        return newOptionList
+    };
 }
 
 export {options, optionList}

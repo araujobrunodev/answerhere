@@ -17,7 +17,7 @@ async function updateTitle () {
     console.log("==========================\n")
 
     const quiz = quizList.find(quiz => quiz.ID == quizsIDToChange) as quizType
-    const indexQuiz = quizList.findIndex(quiz => quiz.ID == quizsIDToChange)
+    const index_quiz = quizList.findIndex(quiz => quiz.ID == quizsIDToChange)
     
     console.log("Current title:", quiz.title)
 
@@ -27,8 +27,9 @@ async function updateTitle () {
     
     console.log(`Change ${quiz.title} to ${newTitle}`)
     quiz.title = newTitle
+    quiz.edited = (new Date()).toString()
 
-    quizList[indexQuiz] = quiz
+    quizList[index_quiz] = quiz
 
     console.log("quizes:",quizList)
 
