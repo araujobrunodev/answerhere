@@ -2,6 +2,7 @@ import quizList from "../storage/cache"
 import text from "./text"
 import timer from "./timer"
 import route from "./routes"
+import editOpt from "./editOpt"
 
 /**
  * @function editSide
@@ -20,9 +21,9 @@ async function editSide (index_quiz: number, sideIndex: number) {
 
     await timer(4)
 
-    const askOptIndex = await text("option index")
+    const askOptIndex = parseInt(await text("option index"))
 
-    //verify index exist and pass to editOpt
+    if (!isNaN(askOptIndex) && askOptIndex < opts_length) editOpt(side.options, askOptIndex)
 
     return route("ADM_UPDATE")
 }
