@@ -19,7 +19,7 @@ async function admCreate () {
     console.log("==========================")
     console.log("INFORMATIONS\n")
 
-    const title = await text("Quiz's title")
+    const title = await text("Quiz's title: ")
     const creationDate = new Date() 
     const edited = "none"
     const questions = await question()

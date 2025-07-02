@@ -1,6 +1,6 @@
 import route from "../tools/routes"
-import input from "../tools/input"
 import timer from "../tools/timer"
+import text from "../tools/text"
 
 /**
  * @function adm
@@ -21,9 +21,9 @@ async function adm () {
     console.log("[ADM_UPDATE]")
     console.log("[ADM_DELETE]\n")
 
-    await input("Write here your command: ")
+    await text("Write here your command: ")
 
-    if (route("CURRENT_PATH") == "ADM") route("ADM")
+    if (route("CURRENT_PATH") == "ADM") return route("ADM")
 }
 
 export default adm

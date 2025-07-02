@@ -1,4 +1,4 @@
-import input from "./input"
+import text from "./text"
 
 /**
  * @function value
@@ -6,7 +6,7 @@ import input from "./input"
 */
 async function value () {
     console.log("This part is import you look carefully")
-    const Value = await input(`is this sentence the answer? (y/n)`) 
+    const Value = await text(`is this sentence the answer? (y/n) `) 
 
     const types_of_yes = ["y","yes","yeah", "yep", "ok", "sure"]
 

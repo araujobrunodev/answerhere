@@ -1,10 +1,9 @@
 import findQuizsID from "../tools/findQuizsID"
-import askQuizsID from "../tools/askQuizsID"
 import { quizList } from "../storage/cache"
 import { quizType } from "../structureType/questionsType"
 import route from "../tools/routes"
 import timer from "../tools/timer"
-import input from "../tools/input"
+import text from "../tools/text" 
 
 /**
  * @function admRead
@@ -19,7 +18,7 @@ async function admRead () {
     
     console.log("==========================\n")
 
-    const ID = await askQuizsID()
+    const ID = await text("Quiz's ID: ")
     const findID = await findQuizsID(ID)
 
     if (findID) {
@@ -30,7 +29,7 @@ async function admRead () {
         await timer(5)
     } else console.log("\ncan't find quiz")
 
-    const repeat_loop = await input("You want to keep finding it? (y/n) ")
+    const repeat_loop = await text("You want to keep finding it? (y/n) ")
     const types_of_yes = ["y","yes","yeah", "yep", "ok", "sure"]
 
     if (types_of_yes.findIndex((value) => value === repeat_loop.toLocaleLowerCase()) !== -1) return admRead();

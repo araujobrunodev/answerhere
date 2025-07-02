@@ -1,8 +1,7 @@
-import input from "../tools/input"
 import route from "../tools/routes"
-import askQuizsID from "../tools/askQuizsID"
 import findQuizsID from "../tools/findQuizsID"
 import timer from "../tools/timer"
+import text from "../tools/text"
 
 let quizsIDToChange = ""
 
@@ -19,7 +18,7 @@ async function admUpdate () {
 
     console.log("==========================")
 
-    const askID = await askQuizsID()
+    const askID = await text("Quiz's ID: ")
     const findID = await findQuizsID(askID)
     
     if (findID) quizsIDToChange = askID;
@@ -34,9 +33,9 @@ async function admUpdate () {
     console.log("[SIDES]")
     console.log("==========================\n")
 
-    await input("Write here your command: ")
+    await text("Write here your command: ")
 
-    if (route("CURRENT_PATH") == "ADM_UPDATE") route("ADM_UPDATE")
+    if (route("CURRENT_PATH") == "ADM_UPDATE") return route("ADM_UPDATE")
 }
 
 export { admUpdate, quizsIDToChange}

@@ -11,9 +11,9 @@ async function editOpt (opts: optionsType[], opt_index: number) {
 
     console.log(`\nCurrent option: ${opt.text}`)
 
-    const title = await text("Change option's title")
+    const title = await text("Change option's title: ")
     const worth_value = await value()
-    const bio = await text("A reason for that option")
+    const bio = await text("A reason for that option? ")
 
     const newOpt:optionsType = {
         text: title,

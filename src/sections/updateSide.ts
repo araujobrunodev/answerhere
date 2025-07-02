@@ -29,7 +29,7 @@ async function updateSide () {
         await timer(1)
     })
 
-    const askSideIndex = parseInt(await text("side index"))
+    const askSideIndex = parseInt(await text("side index: "))
 
     if (!isNaN(askSideIndex) && askSideIndex < side_length ) {
         const newSide = await editSide(quiz, askSideIndex)

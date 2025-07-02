@@ -1,6 +1,5 @@
 import text from "./text"
 import value from "./value"
-import input from "./input"
 import { optionsType } from "../structureType/questionsType"
 
 const optionList:optionsType[] = []
@@ -13,7 +12,7 @@ async function options ():Promise<optionsType[]> {
     const title = await text("Option's title: ")
     const worthwhile_option = await value()
     const bio = await text("A reason why this is right/wrong answer: ")
-    const repeat_loop = await input("Do you want to continue with the options? (y/n) ")
+    const repeat_loop = await text("Do you want to continue with the options? (y/n) ")
     const types_of_yes = ["y","yes","yeah", "yep", "ok", "sure"]
 
     optionList.push({

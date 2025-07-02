@@ -15,7 +15,7 @@ async function admDelete () {
     
     console.log("==========================")
     
-    const askID = await text("Quiz's ID")
+    const askID = await text("Quiz's ID: ")
     
     removeQuiz(askID)
 }

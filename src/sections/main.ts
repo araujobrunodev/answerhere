@@ -19,7 +19,7 @@ async function main () {
     console.log("[EXIT]")
     console.log("==========================")
 
-    const answer = await text("Where you want to go?")
+    const answer = await text("Where you want to go? ")
 }
 
 export default main

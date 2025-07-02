@@ -6,7 +6,7 @@ import input from "./input"
  * Parameter will be like this "message: "
 */
 async function text (message:string) {
-    const value = await input(`${message}: `) 
+    const value = await input(`${message}`) 
 
     if (value.length !== 0) return value;
     else return text(message);

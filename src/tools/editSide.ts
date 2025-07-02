@@ -12,7 +12,7 @@ async function editSide (quiz: quizType, sideIndex: number) {
 
     console.log(`\nCurrent side's title: ${side.title}`)
 
-    const askTitle = await text("replace title")
+    const askTitle = await text("replace title: ")
 
     side.title = askTitle
 
@@ -30,7 +30,7 @@ async function editSide (quiz: quizType, sideIndex: number) {
     await timer(4)
     console.log("\nOption index is the number at the beginning")
 
-    const askOptIndex = parseInt(await text("option index"))
+    const askOptIndex = parseInt(await text("option index: "))
 
     if (!isNaN(askOptIndex) && askOptIndex < opts_length) {
         const newOpt = await editOpt(side.options, askOptIndex)
