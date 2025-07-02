@@ -11,9 +11,12 @@ import timer from "../tools/timer"
 async function updateTitle () {
     if (quizsIDToChange.length == 0) route("ADM_UPDATE")
 
-    console.log("Update quiz's title section")
+    console.log("\nUpdate quiz's title section")
     console.log("==========================")
     console.log("This section will change quiz's title")
+
+    await timer(2)
+    
     console.log("==========================\n")
 
     const quiz = quizList.find(quiz => quiz.ID == quizsIDToChange) as quizType

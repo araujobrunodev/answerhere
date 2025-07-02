@@ -11,9 +11,12 @@ import input from "../tools/input"
  * will show a menu how to found and read quiz
 */
 async function admRead () {
-    console.log("Read section")
+    console.log("\nRead section")
     console.log("==========================")
     console.log("This section will ask quiz's ID to show it to you")
+    
+    await timer(2)
+    
     console.log("==========================\n")
 
     const ID = await askQuizsID()

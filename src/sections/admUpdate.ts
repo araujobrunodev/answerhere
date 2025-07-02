@@ -2,6 +2,7 @@ import input from "../tools/input"
 import route from "../tools/routes"
 import askQuizsID from "../tools/askQuizsID"
 import findQuizsID from "../tools/findQuizsID"
+import timer from "../tools/timer"
 
 let quizsIDToChange = ""
 
@@ -10,9 +11,12 @@ let quizsIDToChange = ""
  * will ask the quiz property to change it
  */
 async function admUpdate () {
-    console.log("Update section")
+    console.log("\nUpdate section")
     console.log("==========================")
     console.log("This section will ask the quiz property ID to change it")
+    
+    await timer(2)
+
     console.log("==========================")
 
     const askID = await askQuizsID()

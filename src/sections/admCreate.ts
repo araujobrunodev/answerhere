@@ -10,9 +10,12 @@ import { quizType } from "../structureType/questionsType"
  * make a new quiz for you, here is ask detail about it
  */
 async function admCreate () {
-    console.log("Create section")
+    console.log("\nCreate section")
     console.log("==========================")
     console.log("Here is ask info about your quiz.")
+    
+    await timer(2)
+    
     console.log("==========================")
     console.log("INFORMATIONS\n")
 
