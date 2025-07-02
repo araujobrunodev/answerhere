@@ -1,5 +1,5 @@
 import { quizsIDToChange } from "./admUpdate"
-import quizList from "../storage/cache"
+import { quizList } from "../storage/cache"
 import { quizType } from "../structureType/questionsType"
 import route from "../tools/routes"
 import text from "../tools/text"

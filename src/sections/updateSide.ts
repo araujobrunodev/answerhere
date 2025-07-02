@@ -3,7 +3,7 @@ import route from "../tools/routes"
 import text from "../tools/text"
 import timer from "../tools/timer"
 import { quizsIDToChange } from "./admUpdate"
-import quizList from "../storage/cache"
+import { quizList } from "../storage/cache"
 import editSide from "../tools/editSide"
 
 /**

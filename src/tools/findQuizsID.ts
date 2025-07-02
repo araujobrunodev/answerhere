@@ -1,4 +1,4 @@
-import quizList from "../storage/cache"
+import { quizList } from "../storage/cache"
 
 /**
  * @function findQuizsID

@@ -1,6 +1,6 @@
 import findQuizsID from "../tools/findQuizsID"
 import askQuizsID from "../tools/askQuizsID"
-import quizList from "../storage/cache"
+import { quizList } from "../storage/cache"
 import { quizType } from "../structureType/questionsType"
 import route from "../tools/routes"
 import timer from "../tools/timer"

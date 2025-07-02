@@ -1,5 +1,11 @@
 import { quizType } from "../structureType/questionsType"
 
-const quizList:quizType[] = []
+let quizList:quizType[] = []
 
-export default quizList
+function filterQuiz (ID: string) {
+    quizList = quizList.filter((quiz) => {
+        return quiz.ID !== ID
+    })
+}
+
+export { quizList, filterQuiz }

@@ -1,4 +1,5 @@
 import text from "../tools/text"
+import removeQuiz from "../tools/removeQuiz"
 
 /**
  * @function admDelete
@@ -11,8 +12,8 @@ async function admDelete () {
     console.log("==========================")
     
     const askID = await text("Quiz's ID")
-
-    //function to remove from list
+    
+    removeQuiz(askID)
 }
 
 export default admDelete
