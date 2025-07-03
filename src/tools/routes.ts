@@ -21,6 +21,9 @@ import { admUpdate } from "../sections/admUpdate"
 import updateTitle from "../sections/updateTitle"
 import updateSide from "../sections/updateSide"
 import admDelete from "../sections/admDelete"
+import play from "../sections/play"
+import randomQuiz from "../sections/randomQuiz"
+import chooseTheQuiz from "../sections/chooseTheQuiz"
 
 export {Routes}
 
@@ -35,6 +38,7 @@ function route (path:Routes) {
         
         case "PLAY":
             current_path = "PLAY"
+            play()
             break;
 
         case "ADM":
@@ -64,6 +68,7 @@ function route (path:Routes) {
 
         case "CHOOSE_THE_QUIZ":
             current_path = "CHOOSE THE QUIZ"
+            chooseTheQuiz()
             break;
 
         case "EXIT":
@@ -73,6 +78,7 @@ function route (path:Routes) {
 
         case "RANDOM_QUIZ":
             current_path = "RANDOM QUIZ"
+            randomQuiz()
             break;
 
         case "!SIDES":

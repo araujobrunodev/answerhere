@@ -10,7 +10,7 @@ function filterCommand (data: string):string {
 
     if (start_command === -1) return data;
 
-    const command_list = ["!TITLE", "!SIDES", "MAIN", "PLAY", "EXIT", "ADM_CREATE", "ADM_READ", "ADM_UPDATE", "ADM_DELETE", "ADM"]
+    const command_list = ["RANDOM_QUIZ", "CHOOSE_THE_QUIZ", "!TITLE", "!SIDES", "MAIN", "PLAY", "EXIT", "ADM_CREATE", "ADM_READ", "ADM_UPDATE", "ADM_DELETE", "ADM"]
 
     const commandFound = command_list.find(command => {
         return data.toLocaleUpperCase().search(command) > -1
