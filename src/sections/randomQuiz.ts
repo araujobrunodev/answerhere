@@ -1,5 +1,5 @@
 import timer from "../tools/timer"
-import route from "../tools/routes"
+import runQuiz from "../tools/runQuiz"
 import { quizList } from "../storage/cache"
 
 /**
@@ -21,7 +21,7 @@ async function randomQuiz () {
 
     await timer(2)
 
-    //runQuiz(quiz)
+    runQuiz(quiz)
 }
 
 export default randomQuiz
