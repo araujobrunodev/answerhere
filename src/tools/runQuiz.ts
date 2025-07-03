@@ -2,6 +2,7 @@ import { quizType } from "../structureType/questionsType"
 import timer from "../tools/timer"
 import text from "../tools/text"
 import { answerType } from "../structureType/answerType"
+import filterAnswer from "./filterAnswer"
 
 /**
  * @function runQuiz
@@ -37,9 +38,9 @@ async function runQuiz (quiz: quizType) {
         })
 
         const answer = await text("Which do you choose? (By options index) ")
-        // const turn_answer_to_array = function
+        const answer_to_array = filterAnswer(answer)
 
-        
+        answered_quiz.questions[side_answered_index].options = answer_to_array
     })
 
     //quizResults(quiz, answeres)
