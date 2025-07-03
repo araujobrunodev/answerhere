@@ -22,6 +22,7 @@ import updateTitle from "../sections/updateTitle"
 import updateSide from "../sections/updateSide"
 import admDelete from "../sections/admDelete"
 import play from "../sections/play"
+import randomQuiz from "../sections/randomQuiz"
 
 export {Routes}
 
@@ -75,6 +76,7 @@ function route (path:Routes) {
 
         case "RANDOM_QUIZ":
             current_path = "RANDOM QUIZ"
+            randomQuiz()
             break;
 
         case "!SIDES":
