@@ -5,6 +5,7 @@ import runQuiz from "../tools/runQuiz"
 import { quizList } from "../storage/cache"
 import { quizType } from "../structureType/questionsType"
 import route from "../tools/routes"
+import showQuizzes from "../tools/showQuizzes"
 
 /**
  * @function chooseTheQuiz
@@ -20,7 +21,7 @@ async function chooseTheQuiz () {
     const suggest = await text("See quizzes? (y/n) ")
     const types_of_yes = ["y","yes","yeah", "yep", "ok", "sure"]
 
-    if (types_of_yes.findIndex((value) => value === suggest.toLocaleLowerCase()) !== -1) {} //show quizzes
+    if (types_of_yes.findIndex((value) => value === suggest.toLowerCase()) !== -1) await showQuizzes()
     
     const askID = await text("Quiz's ID: ")
     const findID = await findQuizsID(askID)
