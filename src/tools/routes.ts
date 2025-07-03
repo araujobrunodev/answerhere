@@ -21,6 +21,7 @@ import { admUpdate } from "../sections/admUpdate"
 import updateTitle from "../sections/updateTitle"
 import updateSide from "../sections/updateSide"
 import admDelete from "../sections/admDelete"
+import play from "../sections/play"
 
 export {Routes}
 
@@ -35,6 +36,7 @@ function route (path:Routes) {
         
         case "PLAY":
             current_path = "PLAY"
+            play()
             break;
 
         case "ADM":
