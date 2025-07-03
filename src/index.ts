@@ -6,7 +6,7 @@ import timer from "./tools/timer"
 
 /**
  * @function welcome
- * | Give you a welcome
+ *, Give you a welcome
 */
 async function welcome () {
     console.log("\n========================")

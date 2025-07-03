@@ -1,15 +1,17 @@
-import input from "../tools/input"
-import filterCommand from "../tools/filterCommand"
-import route from "../tools/routes"
+import timer from "../tools/timer"
+import text from "../tools/text"
 
 /**
  * @function main
  * Main section introduce you the section
 */
 async function main () {
-    console.log("Main section")
+    console.log("\nMain section")
     console.log("==========================")
     console.log('\nWrite ">section" to be directed to some section')
+
+    await timer(1)
+
     console.log("\nSECTIONS\n")
     console.log("[MAIN]")
     console.log("[PLAY]")
@@ -17,9 +19,7 @@ async function main () {
     console.log("[EXIT]")
     console.log("==========================")
 
-    const answer = await input("where you wanna go?")
-
-    if (route("CURRENT_PATH") == "MAIN") route("MAIN")
+    const answer = await text("Where you want to go? ")
 }
 
 export default main

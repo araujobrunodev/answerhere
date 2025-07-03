@@ -5,7 +5,7 @@ import {current_interface} from "../tools/rl"
  * This function will close the software
 */
 function exit () {
-    console.log("Exit section")
+    console.log("\nExit section")
     console.log("==========================")
     console.log("Thanks to use my program")
     console.log("==========================\n")
