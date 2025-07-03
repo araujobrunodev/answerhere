@@ -12,9 +12,7 @@ async function quizResults (quiz: quizType, answered_quiz: answerType) {
     const corrects:number[] = []
     let all_correct = 0
 
-    console.log("quiz answered:", answered_quiz)
-
-    console.log(`${answered_quiz.title} - ${answered_quiz.ID}`)
+    console.log(`\n${answered_quiz.title} - ${answered_quiz.ID}`)
     console.log("==========================\n")
 
     await timer(3)
@@ -50,8 +48,8 @@ async function quizResults (quiz: quizType, answered_quiz: answerType) {
         await timer(5)
     }
 
-    console.log(`How many is right: ${corrects.length} - [${corrects}]`)
-    console.log(`Quiz answers: ${corrects}/${all_correct}`)
+    console.log(`How many is right: ${corrects.length} - each option: [${corrects}]`)
+    console.log(`Quiz answers: ${corrects.length}/${all_correct}`)
 
     await timer(3)
     
