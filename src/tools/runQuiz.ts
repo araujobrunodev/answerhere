@@ -3,6 +3,7 @@ import timer from "../tools/timer"
 import text from "../tools/text"
 import { answerType } from "../structureType/answerType"
 import filterAnswer from "./filterAnswer"
+import quizResults from "../tools/quizResults"
 
 /**
  * @function runQuiz
@@ -43,7 +44,7 @@ async function runQuiz (quiz: quizType) {
         answered_quiz.questions[side_answered_index].options = answer_to_array
     })
 
-    //quizResults(quiz, answeres)
+    quizResults(quiz, answered_quiz)
 }
 
 export default runQuiz
