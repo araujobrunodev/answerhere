@@ -2,7 +2,7 @@ import { quizType } from "../structureType/questionsType"
 import route from "../tools/routes"
 import text from "../tools/text"
 import timer from "../tools/timer"
-import { quizsIDToChange } from "./admUpdate"
+import { getIDToChange, settIDToChange } from "../tools/IDToChange"
 import { quizList } from "../storage/cache"
 import editSide from "../tools/editSide"
 
@@ -10,15 +10,15 @@ import editSide from "../tools/editSide"
  * @function updateSide
  */
 async function updateSide () {
-    if (quizsIDToChange.length == 0) route("ADM_UPDATE")
+    if (getIDToChange.length == 0) return route("MAIN")
 
     console.log("\nUpdate quiz's side section")
     console.log("==========================")
     console.log("This section will change quiz's side")
     console.log("==========================\n")
 
-    const quiz = quizList.find(quiz => quiz.ID == quizsIDToChange) as quizType
-    const index_quiz = quizList.findIndex(quiz => quiz.ID == quizsIDToChange)
+    const quiz = quizList.find(quiz => quiz.ID == getIDToChange()) as quizType
+    const index_quiz = quizList.findIndex(quiz => quiz.ID == getIDToChange())
     const side_length = quiz.questions.length
 
     console.log("How many sides there in this quiz:", side_length)
@@ -39,6 +39,8 @@ async function updateSide () {
 
         quizList[index_quiz] = quiz
     }
+
+    settIDToChange("")
 
     await timer(6)
     return route("ADM_UPDATE")

@@ -1,4 +1,4 @@
-import { quizsIDToChange } from "./admUpdate"
+import { getIDToChange, settIDToChange } from "../tools/IDToChange"
 import { quizList } from "../storage/cache"
 import { quizType } from "../structureType/questionsType"
 import route from "../tools/routes"
@@ -9,7 +9,7 @@ import timer from "../tools/timer"
  * @function updateTitle
  */
 async function updateTitle () {
-    if (quizsIDToChange.length == 0) route("ADM_UPDATE")
+    if (getIDToChange().length == 0) return route("MAIN")
 
     console.log("\nUpdate quiz's title section")
     console.log("==========================")
@@ -19,8 +19,8 @@ async function updateTitle () {
     
     console.log("==========================\n")
 
-    const quiz = quizList.find(quiz => quiz.ID == quizsIDToChange) as quizType
-    const index_quiz = quizList.findIndex(quiz => quiz.ID == quizsIDToChange)
+    const quiz = quizList.find(quiz => quiz.ID == getIDToChange()) as quizType
+    const index_quiz = quizList.findIndex(quiz => quiz.ID == getIDToChange())
     
     console.log("Current title:", quiz.title)
 
@@ -35,6 +35,8 @@ async function updateTitle () {
     quizList[index_quiz] = quiz
 
     console.log("quizes:",quizList)
+
+    settIDToChange("")
 
     await timer(6)
     return route("ADM_UPDATE")
