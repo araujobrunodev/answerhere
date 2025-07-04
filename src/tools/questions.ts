@@ -10,9 +10,14 @@ const sideList:sideType[] = []
  * there nothing more to put it
  */
 async function question ():Promise<sideType[]> {
-    const title = await text("Side's title: ")
+    console.log("==========================\n")
+
+    const title = await text("Question title: ")
+
+    console.log(`${sideList.length + 1}° question quiz: ${title}`)
+
     const opts = await options()
-    const repeat_loop = await text("Do you want to continue it? (y/n) ")
+    const repeat_loop = await text("Add more question? (y/n) ")
     const types_of_yes = ["y","yes","yeah", "yep", "ok", "sure"]
 
     sideList.push({
@@ -22,6 +27,7 @@ async function question ():Promise<sideType[]> {
 
     if (types_of_yes.findIndex((value) => value === repeat_loop.toLocaleLowerCase()) !== -1) return question();
     else {
+        console.log("==========================\n")
         const newSides = Array.from(sideList)
         sideList.length = 0
 
