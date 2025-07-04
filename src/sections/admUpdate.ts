@@ -2,8 +2,7 @@ import route from "../tools/routes"
 import findQuizsID from "../tools/findQuizsID"
 import timer from "../tools/timer"
 import text from "../tools/text"
-
-let quizsIDToChange = ""
+import { settIDToChange } from "../tools/IDToChange"
 
 /**
  * @function admUpdate
@@ -21,14 +20,14 @@ async function admUpdate () {
     const askID = await text("Quiz's ID: ")
     const findID = await findQuizsID(askID)
     
-    if (findID) quizsIDToChange = askID;
+    if (findID) settIDToChange(askID);
     else {
         console.log("Quiz's ID not found")
         return route("ADM_UPDATE")
     }
 
     console.log("==========================")
-    console.log("Commands to a quiz, write '!command' and replace 'command' with one of command below")
+    console.log("Commands to a quiz, write '>!command' and replace 'command' with one of command below")
     console.log("\n[TITLE]")
     console.log("[SIDES]")
     console.log("==========================\n")
@@ -38,4 +37,4 @@ async function admUpdate () {
     if (route("CURRENT_PATH") == "ADM_UPDATE") return route("ADM_UPDATE")
 }
 
-export { admUpdate, quizsIDToChange}
+export default admUpdate
