@@ -1,6 +1,7 @@
 import { quizList } from "../storage/cache"
 import text from "./text"
 import timer from "./timer"
+import getQuizzes from "../storage/getQuizzes"
 
 // How many pages of quizList can be showed
 let start_index = 0
@@ -11,7 +12,13 @@ let pages = 1
  * @function showQuizzes
  */
 async function showQuizzes () {
-    if (quizList.length == 0) return console.log("There are no quizzes to show you");
+    if (quizList.length == 0) {
+        const new_list = await getQuizzes()
+
+        if (new_list.length == 0) return console.log("There are no quizzes to show you");
+        
+        quizList.push(...new_list)
+    }
 
     const quizzes = quizList.slice(start_index, end_index)
     
@@ -19,7 +26,7 @@ async function showQuizzes () {
     console.log("\n==========================\n")
 
     quizzes.forEach(quiz => {
-        console.log(`Quiz's ${quiz.title} | ID: ${quiz.ID}`)
+        console.table({title: quiz.title, ID: quiz.ID})
     })
 
     console.log("\n==========================")
@@ -30,7 +37,7 @@ async function showQuizzes () {
     const types_of_yes = ["y","yes","yeah", "yep", "ok", "sure"]
 
     if (types_of_yes.findIndex((value) => value === repeat_loop.toLocaleLowerCase()) !== -1) {
-        //search in DB and send to cache
+        quizList.push(...await getQuizzes())
         
         if (end_index < quizList.length) {
             end_index += 5
