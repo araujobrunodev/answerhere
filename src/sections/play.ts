@@ -24,7 +24,7 @@ async function play () {
 
     await text("Write here your command: ")
 
-    if (route("CURRENT_PATH") == "PLAY") return route("PLAY")
+    if (await route("CURRENT_PATH") == "PLAY") return await route("PLAY")
 }
 
 export default play

@@ -9,7 +9,7 @@ import timer from "../tools/timer"
  * @function updateTitle
  */
 async function updateTitle () {
-    if (getIDToChange().length == 0) return route("MAIN")
+    if (getIDToChange().length == 0) return await route("MAIN")
 
     console.log("\nUpdate quiz's title section")
     console.log("==========================")
@@ -39,7 +39,7 @@ async function updateTitle () {
     settIDToChange("")
 
     await timer(6)
-    return route("ADM_UPDATE")
+    return await route("ADM_UPDATE")
 }
 
 export default updateTitle

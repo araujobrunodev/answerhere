@@ -23,7 +23,7 @@ async function admUpdate () {
     if (findID) settIDToChange(askID);
     else {
         console.log("Quiz's ID not found")
-        return route("ADM_UPDATE")
+        return await route("ADM_UPDATE")
     }
 
     console.log("==========================")
@@ -34,7 +34,7 @@ async function admUpdate () {
 
     await text("Write here your command: ")
 
-    if (route("CURRENT_PATH") == "ADM_UPDATE") return route("ADM_UPDATE")
+    if (await route("CURRENT_PATH") == "ADM_UPDATE") return await route("ADM_UPDATE")
 }
 
 export default admUpdate

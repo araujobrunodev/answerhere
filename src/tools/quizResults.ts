@@ -58,7 +58,7 @@ async function quizResults (quiz: quizType, answered_quiz: answerType) {
     const types_of_yes = ["y","yes","yeah", "yep", "ok", "sure"]
 
     if (types_of_yes.findIndex((value) => value === repeat_loop.toLocaleLowerCase()) !== -1) return runQuiz(quiz);
-    else return route("MAIN");
+    else return await route("MAIN");
 }
 
 export default quizResults

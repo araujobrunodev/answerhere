@@ -45,7 +45,7 @@ async function admCreate () {
     console.table(quiz)
 
     await timer(4)
-    route("ADM")
+    await route("ADM")
 }
 
 export default admCreate

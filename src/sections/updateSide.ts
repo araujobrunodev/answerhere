@@ -10,7 +10,7 @@ import editSide from "../tools/editSide"
  * @function updateSide
  */
 async function updateSide () {
-    if (getIDToChange.length == 0) return route("MAIN")
+    if (getIDToChange.length == 0) return await route("MAIN")
 
     console.log("\nUpdate quiz's side section")
     console.log("==========================")
@@ -43,7 +43,7 @@ async function updateSide () {
     settIDToChange("")
 
     await timer(6)
-    return route("ADM_UPDATE")
+    return await route("ADM_UPDATE")
 }
 
 export default updateSide
