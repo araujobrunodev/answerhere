@@ -16,9 +16,9 @@ function filterCommand (data: string):string {
         return data.toLocaleUpperCase().search(command) > -1
     })
 
-    if (commandFound != undefined) route(commandFound as Routes)
-        
-    return data
+    if (commandFound != undefined) return route(commandFound as Routes)
+    
+    return route(route("CURRENT_PATH") as Routes)
 }
 
 export default filterCommand
