@@ -29,7 +29,7 @@ async function chooseTheQuiz () {
     if (findID) return runQuiz(quizList.find(quiz => quiz.ID === askID) as quizType)
     else console.log("\nDidn't find quiz's ID\n")
 
-    if (await route("CURRENT_PATH") == "CHOOSE_THE_QUIZ") return await route("CHOOSE_THE_QUIZ")
+    await route("CURRENT_PATH")
 }
 
 export default chooseTheQuiz

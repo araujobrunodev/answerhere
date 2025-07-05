@@ -34,7 +34,7 @@ async function admUpdate () {
 
     await text("Write here your command: ")
 
-    if (await route("CURRENT_PATH") == "ADM_UPDATE") return await route("ADM_UPDATE")
+    await route("CURRENT_PATH")
 }
 
 export default admUpdate

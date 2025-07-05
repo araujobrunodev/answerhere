@@ -18,7 +18,7 @@ async function filterCommand (data: string):Promise<string> {
 
     if (commandFound) return await route(commandFound);
     
-    return await route(await route("CURRENT_PATH") as Routes)
+    return await route("CURRENT_PATH")
 }
 
 export default filterCommand

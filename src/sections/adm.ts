@@ -23,7 +23,7 @@ async function adm () {
 
     await text("Write here your command: ")
 
-    if (await route("CURRENT_PATH") == "ADM") return await route("ADM")
+    await route("CURRENT_PATH")
 }
 
 export default adm

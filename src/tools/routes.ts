@@ -30,7 +30,12 @@ export {Routes}
 let current_path = ""
 
 async function route (path:Routes) {
-    switch (path) {
+    let direct = ""
+
+    if (path === "CURRENT_PATH") direct = current_path
+    else direct = path
+
+    switch (direct) {
         case "MAIN":
             current_path = "MAIN"
             await main()
