@@ -39,7 +39,7 @@ async function admRead () {
     const repeat_loop = await text("Do you want keep read it? (y/n) ")
 
     if (types_of_yes.findIndex((value) => value === repeat_loop.toLocaleLowerCase()) !== -1) return admRead();
-    else return route("MAIN");
+    else return await route("MAIN");
 }
 
 export default admRead

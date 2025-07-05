@@ -29,66 +29,71 @@ export {Routes}
 
 let current_path = ""
 
-function route (path:Routes) {
-    switch (path) {
+async function route (path:Routes) {
+    let direct = ""
+
+    if (path === "CURRENT_PATH") direct = current_path
+    else direct = path
+
+    switch (direct) {
         case "MAIN":
             current_path = "MAIN"
-            main()
+            await main()
             break;
         
         case "PLAY":
             current_path = "PLAY"
-            play()
+            await play()
             break;
 
         case "ADM":
             current_path = "ADM"
-            adm()
+            await adm()
             break;
 
         case "ADM_CREATE":
             current_path = "ADM_CREATE"
-            admCreate()
+            await admCreate()
             break;
 
         case "ADM_DELETE":
             current_path = "ADM_DELETE"
-            admDelete()
+            await admDelete()
             break;
 
         case "ADM_READ":
             current_path = "ADM_READ"
-            admRead()
+            await admRead()
             break;
 
         case "ADM_UPDATE":
             current_path = "ADM_UPDATE"
-            admUpdate()
+            await admUpdate()
             break;
 
         case "CHOOSE_THE_QUIZ":
             current_path = "CHOOSE THE QUIZ"
-            chooseTheQuiz()
+            await chooseTheQuiz()
             break;
 
         case "EXIT":
             current_path = "EXIT"
-            exit()
+            await exit()
             break;
 
         case "RANDOM_QUIZ":
             current_path = "RANDOM QUIZ"
-            randomQuiz()
+            await randomQuiz()
             break;
 
         case "!SIDES":
             current_path = "ADM_UPDATE!SIDES"
-            updateSide()
+            await updateSide()
             break;
 
         case "!TITLE":
             current_path = "ADM_UPDATE!TITLE"
-            updateTitle()
+            await updateTitle()
             break;
     }
 

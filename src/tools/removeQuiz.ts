@@ -13,14 +13,14 @@ async function removeQuiz (ID:string) {
     else {
         console.log("\nNo quiz found");
         await timer(2)
-        return route("ADM")
+        return await route("ADM")
     }
 
     filterQuiz(ID)
 
     await timer(2)
 
-    return route("ADM")
+    return await route("ADM")
 }
 
 export default removeQuiz
