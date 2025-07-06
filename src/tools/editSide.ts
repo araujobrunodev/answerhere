@@ -21,11 +21,13 @@ async function editSide (quiz: quizType, sideIndex: number) {
 
     await timer(2)
 
-    side.options.forEach(async (opt, index) => {
-        console.log(`\n[${index}] - option ${opt.text}`)
+    for (let index_option = 0; index_option < side.options.length; index_option++) {
+        const opt = quiz.questions[index_option]
+        
+        console.log(`\n[${index_option}] - option ${opt.title}`)
         console.table(opt)
         await timer(1)
-    })
+    }
 
     await timer(4)
     console.log("\nOption index is the number at the beginning")
