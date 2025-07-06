@@ -24,10 +24,11 @@ async function updateSide () {
     console.log("How many sides there in this quiz:", side_length)
     console.log("Choose which side you want to change it by index")
 
-    quiz.questions.forEach(async (side, index) => {
-        console.log(`\n[${index}] - side's title: ${side.title}`)
+    for (let index_side = 0; index_side < quiz.questions.length; index_side++) {
+        const side = quiz.questions[index_side]
+        console.log(`\n[${index_side}] - side's title: ${side.title}`)
         await timer(1)
-    })
+    }
 
     const askSideIndex = parseInt(await text("side index: "))
 
