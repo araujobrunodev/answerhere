@@ -10,7 +10,7 @@ import editSide from "../tools/editSide"
  * @function updateSide
  */
 async function updateSide () {
-    if (getIDToChange.length == 0) return await route("MAIN")
+    if (getIDToChange().length == 0) return await route("MAIN")
 
     console.log("\nUpdate quiz's side section")
     console.log("==========================")
