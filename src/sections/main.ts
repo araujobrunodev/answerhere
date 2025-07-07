@@ -1,5 +1,6 @@
 import timer from "../tools/timer"
 import text from "../tools/text"
+import route from "../tools/routes"
 
 /**
  * @function main
@@ -20,6 +21,8 @@ async function main () {
     console.log("==========================")
 
     const answer = await text("Where you want to go? ")
+
+    await route("CURRENT_PATH")
 }
 
 export default main
